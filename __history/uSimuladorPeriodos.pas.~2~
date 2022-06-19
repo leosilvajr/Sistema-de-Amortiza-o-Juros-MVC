@@ -1,0 +1,10 @@
+unit uSimuladorPeriodos;
+
+interface
+
+implementation
+
+uses unitPrincipal, unitSimulador, uSimuladorController, uSimuladorErros,
+  uSimuladorService, uSimuladorSistemaPagamentoUnico.Service;
+
+end.

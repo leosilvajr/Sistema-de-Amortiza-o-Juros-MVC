@@ -1,0 +1,9 @@
+unit Sistemas.Dados;
+
+interface
+
+implementation
+
+uses Sistemas.Controller, Sistemas.PagamentoUnico, unitPrincipal, unitSimulador;
+
+end.

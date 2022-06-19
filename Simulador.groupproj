@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{C746F046-3003-4306-9A9E-79928C0D97E8}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="AmortizacaoJuros.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="C:\Users\Leonardo Silva\Desktop\Desafio Datapar\datapar\Datapar.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="AmortizacaoJuros">
+        <MSBuild Projects="AmortizacaoJuros.dproj"/>
+    </Target>
+    <Target Name="AmortizacaoJuros:Clean">
+        <MSBuild Projects="AmortizacaoJuros.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AmortizacaoJuros:Make">
+        <MSBuild Projects="AmortizacaoJuros.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Datapar">
+        <MSBuild Projects="C:\Users\Leonardo Silva\Desktop\Desafio Datapar\datapar\Datapar.dproj"/>
+    </Target>
+    <Target Name="Datapar:Clean">
+        <MSBuild Projects="C:\Users\Leonardo Silva\Desktop\Desafio Datapar\datapar\Datapar.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Datapar:Make">
+        <MSBuild Projects="C:\Users\Leonardo Silva\Desktop\Desafio Datapar\datapar\Datapar.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="AmortizacaoJuros;Datapar"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="AmortizacaoJuros:Clean;Datapar:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="AmortizacaoJuros:Make;Datapar:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

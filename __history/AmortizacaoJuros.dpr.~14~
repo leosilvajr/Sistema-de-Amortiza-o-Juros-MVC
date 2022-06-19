@@ -1,0 +1,18 @@
+program AmortizacaoJuros;
+
+uses
+  Vcl.Forms,
+  unitPrincipal in 'unitPrincipal.pas' {frmPrincipal},
+  unitSimulador in 'unitSimulador.pas' {frmSimulador},
+  Sistemas.Controller in 'Sistemas.Controller.pas',
+  Sistemas.Dados in 'Sistemas.Dados.pas',
+  Sistemas.PagamentoUnico in 'Sistemas.PagamentoUnico.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmPrincipal, frmPrincipal);
+  Application.Run;
+end.

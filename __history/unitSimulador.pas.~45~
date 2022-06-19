@@ -1,0 +1,186 @@
+unit unitSimulador;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Buttons,
+  Vcl.Samples.Spin, Vcl.ComCtrls, Math;
+
+type
+
+  TfrmSimulador = class(TForm)
+    pnlTopo: TPanel;
+    lblCapital: TLabel;
+    lblJuros: TLabel;
+    lblPeriodos: TLabel;
+    editCapital: TEdit;
+    editTaxa: TEdit;
+    btnSimular: TBitBtn;
+    lvDetalles: TListView;
+    editPeriodo: TEdit;
+    procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure BitBtn1Click(Sender: TObject);
+    procedure btnSimularClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
+    procedure EnterKeyPress(Sender: TObject; var Key: Char);
+    procedure MudancaDeFoco(Sender:TObject);
+
+  private
+    //Iriamos criar uma Procedure para começar a realizar os calculos.
+    //procedure CalcAmort();
+  public
+
+  end;
+
+var
+  frmSimulador: TfrmSimulador;
+
+implementation
+
+{$R *.dfm}
+
+uses unitPrincipal, Sistemas.Controller, Sistemas.Dados, Sistemas.PagamentoUnico;
+
+{ TfrmSimulador }
+
+procedure TfrmSimulador.BitBtn1Click(Sender: TObject);
+begin
+  Close;
+end;
+
+procedure TfrmSimulador.btnSimularClick(Sender: TObject);
+var
+  I: Integer;
+  Periodos : integer;
+
+  Capital, Taxa, Periodo, Amort, Juros, JurosAcum,  Pag, CapitalAtualizado, JurosAtualizado : real;
+
+  function formatavalor(valor: real):string;
+  begin
+    Result := FormatFloat('###,###,###,###,##0.00', valor);
+  end;
+begin
+  lvDetalles.Items.Clear;
+
+  Capital := StrToFloatDef(editCapital.Text, 0);
+  Taxa := StrToFloatDef(editTaxa.Text, 0) / 100;
+  Periodos := StrToIntDef(editPeriodo.Text, 0);
+
+  Juros := 0;
+  Amort := 0;
+  Pag := 0;
+  CapitalAtualizado := Capital;
+
+
+  with lvDetalles.Items.Add() do
+  begin
+    GroupID := 0;
+
+    Caption := inttostr(0);
+    SubItems.Add(formatavalor(Juros));
+    SubItems.Add(formatavalor(Amort));
+    SubItems.Add(formatavalor(Pag));
+    SubItems.Add(formatavalor(CapitalAtualizado));
+  end;
+
+  for I := 1 to Periodos do
+  begin
+    with lvDetalles.Items.Add() do
+    begin
+      JurosAtualizado := RoundTo(CapitalAtualizado * Taxa, -2);
+      JurosAcum := JurosAcum + JurosAtualizado;
+      if I = Periodos then //ultima linha dos periodos
+      begin
+        Pag := RoundTo(CapitalAtualizado + JurosAtualizado, -2);
+        CapitalAtualizado := 0;
+        Amort := Capital;
+      end
+      else
+      begin
+        CapitalAtualizado := RoundTo(CapitalAtualizado + JurosAtualizado, -2);
+      end;
+
+      GroupID := 1;
+      Caption := inttostr(I);
+
+      SubItems.Add(formatavalor(JurosAtualizado));
+      SubItems.Add(formatavalor(Amort));
+      SubItems.Add(formatavalor(Pag));
+      SubItems.Add(formatavalor(CapitalAtualizado));
+    end;
+  end;
+
+
+  with lvDetalles.Items.Add() do  //With, acessar propriedades
+  begin
+    GroupID := 2;
+
+    Caption := 'Totais';
+    SubItems.Add(formatavalor(JurosAcum));
+    SubItems.Add(formatavalor(Amort));
+    SubItems.Add(formatavalor(Pag));
+    SubItems.Add(formatavalor(CapitalAtualizado));
+  end;
+
+end;
+
+procedure TfrmSimulador.EnterKeyPress(Sender: TObject; var Key: Char);
+begin
+  if key = #13 then
+  begin
+    key := #0;
+    Perform(WM_NEXTDLGCTL,0,0)
+  end;
+end;
+
+procedure TfrmSimulador.FormActivate(Sender: TObject);
+begin
+  MudancaDeFoco(nil);
+end;
+
+procedure TfrmSimulador.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  Action:= caFree;
+end;
+
+procedure TfrmSimulador.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+begin
+  //todo validações
+  CanClose := true;
+end;
+
+procedure TfrmSimulador.FormCreate(Sender: TObject);
+var
+  I: Integer;
+
+begin
+  Left := (GetSystemMetrics(SM_CXSCREEN) - Width) div 7;
+  Top := (GetSystemMetrics(SM_CYSCREEN) -  Height) div 10;
+
+  for I := 0 to ComponentCount-1 do
+    if Components[I] iS TEdit then
+      (Components[I] as TEdit).OnEnter := MudancaDeFoco;
+end;
+
+procedure TfrmSimulador.MudancaDeFoco(Sender: TObject);
+var
+  I:Integer;
+  Ed: TEdit;
+begin
+  for I := 0 to ComponentCount-1 do
+  begin
+    if Components[I] iS TEdit then
+    Begin
+      Ed:= Components[I] as TEdit;
+      if Ed.Focused then
+        Ed.Color := clYellow
+      else
+        Ed.Color :=clWhite;
+    End;
+  end;
+end;
+
+end.

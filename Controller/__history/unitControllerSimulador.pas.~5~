@@ -1,0 +1,46 @@
+unit unitControllerSimulador; //Unit responsável pelo intermédio entre a view e o model
+                                                //Tratamento de dados e Validações
+interface
+
+type  {Record está no Controller porque tanto a View como o Model vão ultilizar.}
+   TRegistro = record
+     Periodo : string;
+     Juros : real;
+     Amort : real;
+     Pag : real;
+     Saldo : real;
+   end;
+
+  TListaRegistros = array of TRegistro; //Array Dinâmico, quando você nao declara o tamanho.
+                                                //Você faz ele crescer ou diminuir
+                                                                //conforme a sua necessidade
+
+  TControllerSimulador = class
+    class function SimularAmortizacao(rCapital, rTaxa: real; iNumPeriodos: integer): TListaRegistros;
+  end;
+
+implementation
+
+uses
+  unitModelSimulador;
+
+  { TControllerSimulador }
+
+class function TControllerSimulador.SimularAmortizacao(rCapital, rTaxa: real; iNumPeriodos: integer): TListaRegistros;
+var
+  Simulador : TSimulador;
+begin
+  Simulador := TSimulador.Create;
+  try
+    Simulador.Capital := rCapital;
+    Simulador.Taxa := rTaxa;
+    Simulador.NumPeriodos := iNumPeriodos;
+    Result := Simulador.SimularAmortizacao;
+  finally
+    Simulador.Free;
+  end;
+end;
+
+end.
+
+

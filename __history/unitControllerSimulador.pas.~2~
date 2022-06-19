@@ -1,0 +1,35 @@
+unit unitControllerSimulador;
+
+interface
+
+uses unitModelSimulador;
+
+type
+
+  TControllerSimulador = class
+    class function SimularAmortizacao(rCapital, rTaxa: real; iNumPeriodos: integer): TListaRegistros;
+  end;
+
+implementation
+
+
+{ TControllerSimulador }
+
+class function TControllerSimulador.SimularAmortizacao(rCapital, rTaxa: real; iNumPeriodos: integer): TListaRegistros;
+var
+  Simulador : TSimulador;
+begin
+  Simulador := TSimulador.Create;
+  try
+    Simulador.Capital := rCapital;
+    Simulador.Taxa := rTaxa;
+    Simulador.NumPeriodos := iNumPeriodos;
+    Result := Simulador.SimularAmortizacao;
+  finally
+    Simulador.Free;
+  end;
+end;
+
+end.
+
+

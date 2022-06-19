@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/04/06 17:21:18.000.466,=C:\Users\Leonardo Silva\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/04/11 19:10:34.000.224,=C:\Users\Leonardo Silva\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/04/11 22:56:33.000.584,=C:\Users\Leonardo Silva\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/04/11 22:56:46.000.200,=C:\Users\Leonardo Silva\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/04/11 22:57:28.000.028,=C:\Users\Leonardo Silva\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/04/29 18:03:13.000.955,=C:\Users\Leonardo Silva\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/06/14 15:54:54.000.466,=C:\Users\Leonardo Silva\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/06/14 15:56:04.000.820,D:\Curso_Delphi\SistemaAmortizacaoJuros\unitPrincipal.dfm=C:\Users\Leonardo Silva\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2022/06/14 15:56:04.000.820,D:\Curso_Delphi\SistemaAmortizacaoJuros\unitPrincipal.pas=C:\Users\Leonardo Silva\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/06/14 15:56:13.000.863,D:\Curso_Delphi\SistemaAmortizacaoJuros\AmortizacaoJuros.dproj=C:\Users\Leonardo Silva\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2022/06/14 16:44:02.000.065,=D:\Curso_Delphi\SistemaAmortizacaoJuros\Unit1.pas</Transaction>
+    <Transaction>2022/06/14 16:44:11.000.660,=D:\Curso_Delphi\SistemaAmortizacaoJuros\Unit1.pas</Transaction>
+    <Transaction>2022/06/14 16:44:21.000.956,D:\Curso_Delphi\SistemaAmortizacaoJuros\Unit1.pas=D:\Curso_Delphi\SistemaAmortizacaoJuros\unitSimulador.pas</Transaction>
+    <Transaction>2022/06/14 16:44:21.000.956,D:\Curso_Delphi\SistemaAmortizacaoJuros\Unit1.dfm=D:\Curso_Delphi\SistemaAmortizacaoJuros\unitSimulador.dfm</Transaction>
+    <Transaction>2022/06/14 19:58:15.000.422,=D:\Curso_Delphi\SistemaAmortizacaoJuros\Unit1.pas</Transaction>
+    <Transaction>2022/06/14 19:58:33.000.136,D:\Curso_Delphi\SistemaAmortizacaoJuros\Unit1.pas=D:\Curso_Delphi\SistemaAmortizacaoJuros\uSimuladorPeriodos.pas</Transaction>
+    <Transaction>2022/06/14 19:59:16.000.055,=D:\Curso_Delphi\SistemaAmortizacaoJuros\Unit1.pas</Transaction>
+    <Transaction>2022/06/14 19:59:36.000.812,D:\Curso_Delphi\SistemaAmortizacaoJuros\Unit1.pas=D:\Curso_Delphi\SistemaAmortizacaoJuros\uSimuladorController.pas</Transaction>
+    <Transaction>2022/06/14 19:59:45.000.114,=D:\Curso_Delphi\SistemaAmortizacaoJuros\Unit1.pas</Transaction>
+    <Transaction>2022/06/14 19:59:53.000.041,D:\Curso_Delphi\SistemaAmortizacaoJuros\Unit1.pas=D:\Curso_Delphi\SistemaAmortizacaoJuros\uSimuladorErros.pas</Transaction>
+    <Transaction>2022/06/14 20:00:02.000.802,=D:\Curso_Delphi\SistemaAmortizacaoJuros\Unit1.pas</Transaction>
+    <Transaction>2022/06/14 20:00:12.000.047,D:\Curso_Delphi\SistemaAmortizacaoJuros\Unit1.pas=D:\Curso_Delphi\SistemaAmortizacaoJuros\uSimuladorService.pas</Transaction>
+    <Transaction>2022/06/14 20:00:41.000.875,=D:\Curso_Delphi\SistemaAmortizacaoJuros\Unit1.pas</Transaction>
+    <Transaction>2022/06/14 20:01:19.000.943,D:\Curso_Delphi\SistemaAmortizacaoJuros\Unit1.pas=D:\Curso_Delphi\SistemaAmortizacaoJuros\uSimuladorSistemaPagamentoUnico.Service.pas</Transaction>
+    <Transaction>2022/06/14 22:53:06.000.195,D:\Curso_Delphi\SistemaAmortizacaoJuros\uSimuladorController.pas=</Transaction>
+    <Transaction>2022/06/14 22:53:07.000.440,D:\Curso_Delphi\SistemaAmortizacaoJuros\uSimuladorErros.pas=</Transaction>
+    <Transaction>2022/06/14 22:53:08.000.426,D:\Curso_Delphi\SistemaAmortizacaoJuros\uSimuladorService.pas=</Transaction>
+    <Transaction>2022/06/14 22:53:09.000.234,D:\Curso_Delphi\SistemaAmortizacaoJuros\uSimuladorPeriodos.pas=</Transaction>
+    <Transaction>2022/06/14 22:53:10.000.027,D:\Curso_Delphi\SistemaAmortizacaoJuros\uSimuladorSistemaPagamentoUnico.Service.pas=</Transaction>
+    <Transaction>2022/06/14 22:58:21.000.972,=D:\Curso_Delphi\SistemaAmortizacaoJuros\Unit1.pas</Transaction>
+    <Transaction>2022/06/14 22:58:47.000.035,D:\Curso_Delphi\SistemaAmortizacaoJuros\Unit1.pas=D:\Curso_Delphi\SistemaAmortizacaoJuros\Sistemas.Controller.pas</Transaction>
+    <Transaction>2022/06/14 22:58:55.000.246,=D:\Curso_Delphi\SistemaAmortizacaoJuros\Unit1.pas</Transaction>
+    <Transaction>2022/06/14 22:59:06.000.320,D:\Curso_Delphi\SistemaAmortizacaoJuros\Unit1.pas=D:\Curso_Delphi\SistemaAmortizacaoJuros\Sistemas.Dados.pas</Transaction>
+    <Transaction>2022/06/14 22:59:09.000.918,=D:\Curso_Delphi\SistemaAmortizacaoJuros\Unit1.pas</Transaction>
+    <Transaction>2022/06/14 22:59:18.000.621,D:\Curso_Delphi\SistemaAmortizacaoJuros\Unit1.pas=D:\Curso_Delphi\SistemaAmortizacaoJuros\Sistemas.PagamentoUnico.pas</Transaction>
+    <Transaction>2022/06/17 15:27:02.000.976,D:\Curso_Delphi\SistemaAmortizacaoJuros\Sistemas.Dados.pas=</Transaction>
+    <Transaction>2022/06/17 15:27:02.000.976,D:\Curso_Delphi\SistemaAmortizacaoJuros\Sistemas.PagamentoUnico.pas=</Transaction>
+    <Transaction>2022/06/17 15:27:02.000.958,D:\Curso_Delphi\SistemaAmortizacaoJuros\Sistemas.Controller.pas=</Transaction>
+    <Transaction>2022/06/17 20:21:45.000.918,=D:\Curso_Delphi\SistemaAmortizacaoJuros\Unit1.pas</Transaction>
+    <Transaction>2022/06/17 20:22:07.000.118,D:\Curso_Delphi\SistemaAmortizacaoJuros\Unit1.dfm=D:\Curso_Delphi\SistemaAmortizacaoJuros\unitSplash.dfm</Transaction>
+    <Transaction>2022/06/17 20:22:07.000.118,D:\Curso_Delphi\SistemaAmortizacaoJuros\Unit1.pas=D:\Curso_Delphi\SistemaAmortizacaoJuros\unitSplash.pas</Transaction>
+    <Transaction>2022/06/18 11:59:52.000.333,D:\Curso_Delphi\SistemaAmortizacaoJuros\unitViewSimulador.pas=D:\Curso_Delphi\SistemaAmortizacaoJuros\unitSimulador.pas</Transaction>
+    <Transaction>2022/06/18 11:59:52.000.333,D:\Curso_Delphi\SistemaAmortizacaoJuros\unitViewSimulador.dfm=D:\Curso_Delphi\SistemaAmortizacaoJuros\unitSimulador.dfm</Transaction>
+    <Transaction>2022/06/18 12:02:14.000.275,=D:\Curso_Delphi\SistemaAmortizacaoJuros\Unit1.pas</Transaction>
+    <Transaction>2022/06/18 12:02:33.000.756,D:\Curso_Delphi\SistemaAmortizacaoJuros\unitControllerSimulador.pas=D:\Curso_Delphi\SistemaAmortizacaoJuros\Unit1.pas</Transaction>
+    <Transaction>2022/06/18 12:02:42.000.093,=D:\Curso_Delphi\SistemaAmortizacaoJuros\Unit1.pas</Transaction>
+    <Transaction>2022/06/18 12:02:55.000.810,D:\Curso_Delphi\SistemaAmortizacaoJuros\unitModelSimulador.pas=D:\Curso_Delphi\SistemaAmortizacaoJuros\Unit1.pas</Transaction>
+    <Transaction>2022/06/18 16:31:08.000.192,D:\Curso_Delphi\SistemaAmortizacaoJuros\View\unitViewSimulador.dfm=D:\Curso_Delphi\SistemaAmortizacaoJuros\unitViewSimulador.dfm</Transaction>
+    <Transaction>2022/06/18 16:31:08.000.192,D:\Curso_Delphi\SistemaAmortizacaoJuros\View\unitViewSimulador.pas=D:\Curso_Delphi\SistemaAmortizacaoJuros\unitViewSimulador.pas</Transaction>
+    <Transaction>2022/06/18 16:31:23.000.146,D:\Curso_Delphi\SistemaAmortizacaoJuros\Controller\unitControllerSimulador.pas=D:\Curso_Delphi\SistemaAmortizacaoJuros\unitControllerSimulador.pas</Transaction>
+    <Transaction>2022/06/18 16:31:33.000.612,D:\Curso_Delphi\SistemaAmortizacaoJuros\Model\unitModelSimulador.pas=D:\Curso_Delphi\SistemaAmortizacaoJuros\unitModelSimulador.pas</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="Controller"/>
+    <File Path="Controller\unitControllerSimulador.pas"/>
+    <File Path="Model"/>
+    <File Path="Model\unitModelSimulador.pas"/>
+    <File Path="View"/>
+    <File Path="View\unitViewSimulador.pas"/>
+    <File Path="View\unitViewSimulador.dfm"/>
+    <File Path="unitPrincipal.pas"/>
+    <File Path="unitPrincipal.dfm"/>
+    <File Path="unitSplash.pas"/>
+    <File Path="unitSplash.dfm"/>
+  </ProjectSortOrder>
+</BorlandProject>

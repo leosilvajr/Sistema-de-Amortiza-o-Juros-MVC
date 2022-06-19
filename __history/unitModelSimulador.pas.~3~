@@ -1,0 +1,121 @@
+unit unitModelSimulador;
+
+interface
+
+type
+   TRegistro = record
+     Periodo : string;
+     Juros : real;
+     Amort : real;
+     Pag : real;
+     Saldo : real;
+   end;
+
+  TListaRegistros = array of TRegistro;
+
+  TSimulador = class
+  private
+    FListaRegistros: TListaRegistros;
+    FTaxa: real;
+    FNumPeriodos: integer;
+    teste : array of string;
+    FCapital: real;
+    procedure SetCapital(const Value: real);
+    procedure SetListaRegistros(const Value: TListaRegistros);
+    procedure SetNumPeriodos(const Value: integer);
+    procedure SetTaxa(const Value: real);
+  published
+     property Capital : real read FCapital write SetCapital;
+     property Taxa : real read FTaxa write SetTaxa;
+     property NumPeriodos : integer read FNumPeriodos write SetNumPeriodos;
+     property ListaRegistros : TListaRegistros read FListaRegistros write SetListaRegistros;
+
+     function SimularAmortizacao(rCapital, rTaxa: real; iNumPeriodos: integer): TListaRegistros;
+   end;
+
+implementation
+
+{ TSimulador }
+
+procedure TSimulador.SetCapital(const Value: real);
+begin
+  FCapital := Value;
+end;
+
+procedure TSimulador.SetListaRegistros(const Value: TListaRegistros);
+begin
+  FListaRegistros := Value;
+end;
+
+procedure TSimulador.SetNumPeriodos(const Value: integer);
+begin
+  FNumPeriodos := Value;
+end;
+
+procedure TSimulador.SetTaxa(const Value: real);
+begin
+  FTaxa := Value;
+end;
+
+function TSimulador.SimularAmortizacao(rCapital, rTaxa: real;
+  iNumPeriodos: integer): TListaRegistros;
+var
+  I: Integer;
+  JurosAcum, CapitalAtualizado, JurosAtualizado : real;
+begin
+  SetLength(FListaRegistros, 0); //Limpa o array
+
+  JurosAcum := 0;
+  CapitalAtualizado := rCapital;
+
+  SetLength(FListaRegistros, 1); //Inicial
+  with FListaRegistros[0] do
+  begin
+    Periodo := '0';
+    Juros := 0;
+    Amort := 0;
+    Pag   := 0;
+    Saldo := CapitalAtualizado;
+  end;
+
+  for I := 1 to iNumPeriodos do
+  begin
+    SetLength(FListaRegistros, length(FListaRegistros)+1); //Periodos
+    with FListaRegistros[length(FListaRegistros)-1) do
+    begin
+      Amort := 0;
+      Pag   := 0;
+
+      JurosAtualizado := RoundTo(CapitalAtualizado * rTaxa, -2);
+      JurosAcum := JurosAcum + JurosAtualizado;
+      if I = iNumPeriodos then //ultima linha dos periodos
+      begin
+        Pag := RoundTo(CapitalAtualizado + JurosAtualizado, -2);
+        CapitalAtualizado := 0;
+        Amort := rCapital;
+      end
+      else
+      begin
+        CapitalAtualizado := RoundTo(CapitalAtualizado + JurosAtualizado, -2);
+      end;
+
+      Caption := inttostr(I);
+
+      Juros := JurosAtualizado;
+      Saldo := CapitalAtualizado;
+    end;
+  end;
+
+
+  SetLength(FListaRegistros, length(FListaRegistros)+1); //Final
+  with FListaRegistros[length(FListaRegistros)-1) do
+  begin
+    Periodo := 'Totais';
+    Amort := 0;
+    Pag   := 0;
+    Juros := JurosAcum;
+    Saldo := CapitalAtualizado;
+  end;
+end;
+
+end.
